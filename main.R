@@ -76,6 +76,7 @@ plt1 <- ggplot(alldata) + geom_bar(aes(x = idx, y = values),
                                    stat = "identity", fill = "lightgray",
                                    color = "black") + 
     facet_grid(factor(position)~ type) + 
-    geom_text(aes(x = idx, y = values, label = keywords), nudge_y = 3) +
+    geom_text(aes(x = idx, y = values, label = keywords), nudge_y = 4) +
     xlab("") + ylab("Number of occurrences")
 plot(plt1)
+ggsave(plt1, filename = "/tmp/google_actor_suggestions.pdf")
